@@ -1,7 +1,7 @@
 :root {
   --font-family-title: "Poiret One", system-ui, sans-serif;
   --font-family-button: "DM Serif Text", system-ui, cursive;
-  --font-family-body: "DM Serif Display","DM Serif Text", serif;
+  --font-family-body: "DM Serif Display", "DM Serif Text", serif;
   --color-background: #111;
   --color-on-background: #fefefe;
   --color-accent: gold;
@@ -32,13 +32,12 @@
 }
 
 @media screen and (min-width: 768px) {
-  #app,
   .container {
     margin: 0 auto;
     max-width: 90vw;
   }
 
-  .cotainer {
+  .container {
     flex-direction: row;
   }
 }
@@ -231,33 +230,39 @@ h3 {
   text-align: left;
 }
 .header {
-  margin: var(--vr) auto;
+  background-color: var(--color-on-background);
+  margin: 0 0 var(--vr);
+  padding: var(--vr);
 }
 
 .header h1 {
-  background: linear-gradient(
-    var(--color-background) 0%,
-    var(--color-background) 49%,
-    var(--color-on-background) 50%,
-    var(--color-on-background) 51%,
-    var(--color-background) 52%,
-    var(--color-background) 100%
-  );
-  color: var(--color-on-background);
-  font-size: 1.25rem;
-  line-height: 1.25;
+  background-color: var(--color-on-background);
+  color: var(--color-background);
+  flex-grow: 1;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.125ch;
+  line-height: 2;
   margin: 0 auto;
   overflow: hidden;
-  text-align: center;
+  text-align: left;
   text-transform: uppercase;
 }
 
-.header h1 > .bg {
-  padding: 0 0.75em;
-  position: relative;
+.header .btn {
+  color: var(--color-background);
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.header .container {
+  display: flex;
+  flex-flow: row nowrap;
+  margin: 0 auto;
 }
 
 .credit {
+  display: none;
   font-family: var(--font-family-title, sans-serif);
   font-size: 0.666em;
   text-transform: uppercase;

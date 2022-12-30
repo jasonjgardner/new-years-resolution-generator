@@ -1,28 +1,33 @@
 <template>
   <main id="generator" :class="{ sharing: isSharing }">
     <header class="header">
-      <h1>
-        <span class="bg">New Year's Resolution Generator</span>
-      </h1>
+      <div class="container">
+        <h1>New Year's Resolution Generator</h1>
 
-      <button class="btn toggle" @click="showSidebar = !showSidebar">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="30"
-          height="30"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+        <button
+          class="btn toggle"
+          type="button"
+          title="Show/hide resolutions list"
+          @click="showSidebar = !showSidebar"
         >
-          <line x1="3" y1="12" x2="21" y2="12"></line>
-          <line x1="3" y1="6" x2="21" y2="6"></line>
-          <line x1="3" y1="18" x2="21" y2="18"></line>
-        </svg>
-        <span class="badge">{{ log.length }}</span>
-      </button>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            height="30"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+          <span class="badge" v-show="log.length > 0">{{ log.length }}</span>
+        </button>
+      </div>
     </header>
 
     <aside
@@ -142,7 +147,12 @@
             <time>{{ goalYear }}</time> Resolutions
           </h2>
 
-          <button class="btn close" @click="showSidebar = false">
+          <button
+            class="btn close"
+            type="button"
+            title="Hide resolutions list"
+            @click="showSidebar = false"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="30"
@@ -324,7 +334,7 @@ export default {
   top: 0;
   right: 0;
   bottom: 0;
-  width: 80vw;
+  width: 88vw;
   transform: translateX(100%);
   transition: transform 0.3s ease-in-out;
   overflow-y: auto;
