@@ -22,8 +22,32 @@
   margin: 0 auto var(--vr);
   max-height: calc(10 * var(--vr));
   order: 1;
-  padding: var(--vr);
+  padding: 0 var(--vr) var(--vr) var(--vr);
   width: var(--sidebar-width, 75%);
+}
+
+.sidebar__log {
+  display: flex;
+  flex-flow: column nowrap;
+  min-height: 100%;
+  justify-content: flex-start;
+}
+
+.sidebar__header {
+  align-items: center;
+  border-bottom: 1px solid var(--color-on-background);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.sidebar__header + .list {
+  flex-grow: 1;
+  margin-top: var(--vr);
+}
+
+.sidebar__header ~ .sidebar__actions {
+  margin-top: auto;
 }
 
 .columns {
@@ -274,7 +298,8 @@ h3 {
   width: 480px;
 }
 
-.sharing .lead {
+.sharing .lead,
+.sharing .main .btn {
   font-size: var(--font-size-sharing, 1.5rem);
 }
 

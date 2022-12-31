@@ -135,9 +135,7 @@
           </transition>
         </div>
 
-        <footer class="credit">
-          Created by Jason&rsquo;s New Year&rsquo;s Resolution Generator
-        </footer>
+        <footer class="credit"></footer>
       </article>
 
       <aside :class="['sidebar', { visible: showSidebar }]">
@@ -326,15 +324,15 @@ export default {
 
 <style>
 .sidebar {
-  background-color: rgba(3, 3, 3, 0.8);
-  color: #fff;
+  background-color: var(--color-background);
+  color: var(--color-on-background);
   height: 100%;
   min-height: 99vh;
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
-  width: 88vw;
+  width: 100%;
   transform: translateX(100%);
   transition: transform 0.3s ease-in-out;
   overflow-y: auto;
@@ -343,11 +341,5 @@ export default {
 
 .sidebar.visible {
   transform: translateX(0);
-}
-
-@supports (backdrop-filter: blur(10px)) {
-  .sidebar {
-    backdrop-filter: blur(10px);
-  }
 }
 </style>
